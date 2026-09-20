@@ -1,0 +1,1211 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+
+%\usepackage{scrlayer-scrpage}
+
+%\usepackage[USenglish]{babel} 
+\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage{csquotes}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace} %zeilenabstand
+\usepackage{todonotes}
+%\usepackage{pdfpages}
+
+% sans serif text font
+%\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+
+\usepackage{sidecap}
+\usepackage{caption}
+\captionsetup[figure]{name={Fig.},labelsep=period,font=footnotesize,labelfont=bf}
+%\usepackage{showframe}
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}}
+\end_preamble
+\options a4paper, 11pt
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Local Density of States
+\end_layout
+
+\begin_layout Section
+Local Density of States of a Quantum Well
+\end_layout
+
+\begin_layout Standard
+Evaluate LDOS for conduction band in a nanostructure
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}\left(\mathbf{r},E\right) & =\sum_{n,\sigma}\left|\Psi_{n}\left(\mathbf{r}\right)\right|^{2}\delta\left(E_{n}-E\right)
+\end{align*}
+
+\end_inset
+
+The wave function obeys
+\begin_inset Formula 
+\begin{align*}
+\left(-\frac{\hbar^{2}}{2m^{*}}\nabla^{2}+U\left(\mathbf{r}\right)\right)\Psi_{n}\left(\mathbf{r}\right) & =E_{n}\Psi_{n}\left(\mathbf{r}\right)
+\end{align*}
+
+\end_inset
+
+We assume a quantum well confinement potential 
+\begin_inset Formula $U\left(\mathbf{r}\right)=U\left(z\right)$
+\end_inset
+
+ and a constant,
+ isotropic effective mass 
+\begin_inset Formula $m^{*}$
+\end_inset
+
+.
+ We make the separation ansatz
+\begin_inset Formula 
+\begin{align*}
+\Psi_{n}\left(\mathbf{r}\right)\to & \Psi_{n,\mathbf{k}_{\parallel}}\left(\mathbf{r}\right)=\frac{1}{\sqrt{A}}\mathrm{e}^{ik_{x}x}\mathrm{e}^{ik_{y}y}\psi_{n}\left(z\right)\\
+E_{n}\to & E_{n,\mathbf{k}_{\parallel}}=E_{n}+\frac{\hbar^{2}k^{2}_{\parallel}}{2m^{*}}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{k}_{\parallel}=\left(k_{x},k_{y}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $A$
+\end_inset
+
+ is the in-plane area.
+ Then the problem reduces to
+\begin_inset Formula 
+\begin{align*}
+\left(-\frac{\hbar^{2}}{2m^{*}}\frac{\partial^{2}}{\partial z^{2}}+U\left(z\right)\right)\psi_{n}\left(z\right) & =E_{n}\psi_{n}\left(z\right).
+\end{align*}
+
+\end_inset
+
+The LDOS is evaluated as
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}\left(\mathbf{r},E\right)\to\mathrm{LDOS}\left(z,E\right) & =\frac{1}{A}\sum_{n,\mathbf{k}_{\parallel},\sigma}\left|\psi_{n}\left(z\right)\right|^{2}\delta\left(E_{n,\mathbf{k}_{\parallel}}-E\right)\\
+ & =\frac{2}{\left(2\pi\right)^{2}}\sum_{n}\int_{\mathbb{R}^{2}}\mathrm{d}^{2}k_{\parallel}\left|\psi_{n}\left(z\right)\right|^{2}\delta\left(E_{n}+\frac{\hbar^{2}k^{2}_{\parallel}}{2m^{*}}-E\right)\\
+ & =\frac{2}{\left(2\pi\right)^{2}}\sum_{n}2\pi\int^{\infty}_{0}\mathrm{d}k\,k\left|\psi_{n}\left(z\right)\right|^{2}\delta\left(E_{n}+\frac{\hbar^{2}k^{2}}{2m^{*}}-E\right)\\
+ & =\frac{2}{2\pi}\sum_{n}\frac{2m^{*}}{\hbar^{2}}\int^{\infty}_{0}\mathrm{d}k\,k\left|\psi_{n}\left(z\right)\right|^{2}\delta\left(k^{2}-\frac{2m^{*}\left(E-E_{n}\right)}{\hbar^{2}}=g\left(k\right)\right)\\
+ & =\frac{2}{2\pi}\sum_{n}\frac{2m^{*}}{\hbar^{2}}\int^{\infty}_{0}\mathrm{d}k\,k\left|\psi_{n}\left(z\right)\right|^{2}\frac{1}{2k}\delta\left(k-\frac{\sqrt{2m^{*}\left(E-E_{n}\right)}}{\hbar}\right)\\
+ & =\frac{m^{*}}{\pi\hbar^{2}}\sum_{n}\left|\psi_{n}\left(z\right)\right|^{2}\Theta\left(E-E_{n}\right)
+\end{align*}
+
+\end_inset
+
+So far,
+ we assumed a discrete set of eigenstates.
+ In the following,
+ we will distinguish bound states in the QW (labeled by 
+\begin_inset Formula $n$
+\end_inset
+
+) from continuum states (indexed by their energy 
+\begin_inset Formula $E$
+\end_inset
+
+) as
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}\left(z,E\right) & =\mathrm{LDOS}^{\mathrm{bound}}\left(z,E\right)+\mathrm{LDOS}^{\rightarrow}\left(z,E\right)+\mathrm{LDOS}^{\leftarrow}\left(z,E\right)
+\end{align*}
+
+\end_inset
+
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}^{\mathrm{bound}}\left(z,E\right) & =\frac{m^{*}}{\pi\hbar^{2}}\sum_{n}\left|\psi_{n}\left(z\right)\right|^{2}\Theta\left(E-E_{n}\right)
+\end{align*}
+
+\end_inset
+
+For the propagating waves,
+ we use their labeling by the wave number
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}^{\rightarrow}\left(z,E\right) & =\frac{m^{*}}{\pi\hbar^{2}}\int^{k_{\mathrm{max}}\left(E\right)}_{0}\mathrm{d}k\left|\psi_{k}\left(z\right)\right|^{2}\Theta\left(E-U\left(0\right)-\frac{\hbar^{2}k^{2}}{2m^{*}}\right)
+\end{align*}
+
+\end_inset
+
+with continuum states normalized as
+\begin_inset Formula 
+\begin{align*}
+\int\mathrm{d}z\,\psi^{*}_{k,d}\left(z\right)\psi_{k',d'}\left(z\right) & =\delta_{d,d'}\delta\left(k-k'\right)
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $d\in\left\{ \rightarrow,\leftarrow\right\} $
+\end_inset
+
+.
+ We can write this using 
+\begin_inset Formula $\varepsilon=U\left(0\right)+\frac{\hbar^{2}k^{2}}{2m^{*}}$
+\end_inset
+
+ as
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}^{\rightarrow}\left(z,E\right) & =\frac{1}{4\pi}\left(\frac{2m^{*}}{\hbar^{2}}\right)^{3/2}\int^{E}_{U\left(0\right)}\frac{\mathrm{d}\varepsilon}{\sqrt{\varepsilon-U_{0}}}\left|\psi_{\varepsilon}\left(z\right)\right|^{2}\Theta\left(E-\varepsilon\right)
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathrm{d}k=\frac{m^{*}}{\hbar^{2}k\left(\varepsilon\right)}\mathrm{d}\varepsilon=\frac{1}{2}\frac{\sqrt{2m^{*}}}{\hbar}\frac{\mathrm{d}\varepsilon}{\sqrt{\varepsilon-U_{0}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Bulk
+\end_layout
+
+\begin_layout Standard
+For 3D bulk with 
+\begin_inset Formula $\psi_{n}\left(z\right)\to\psi_{k_{z}}\left(z\right)=\frac{1}{\sqrt{L}}\mathrm{e}^{ik_{z}z}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{n}\to\varepsilon=E_{c}+\frac{\hbar^{2}k^{2}_{z}}{2m^{*}}$
+\end_inset
+
+,
+ this reduces to
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}\left(z,E\right)\to\mathrm{DOS}\left(E\right) & =\frac{m^{*}}{\pi\hbar^{2}L}\frac{L}{2\pi}2\int^{\infty}_{0}\mathrm{d}k_{z}\,\Theta\left(E-E_{c}-\frac{\hbar^{2}k^{2}_{z}}{2m^{*}}\right)\\
+ & =\frac{m^{*}}{\pi\hbar^{2}L}\frac{L}{2\pi}2\int^{\infty}_{E_{c}}\mathrm{d}\varepsilon\,\frac{1}{2}\frac{\sqrt{2m^{*}}}{\hbar}\frac{1}{\sqrt{\varepsilon-E_{c}}}\,\Theta\left(E-\varepsilon\right)\\
+ & =\left(\frac{2m^{*}}{\hbar^{2}}\right)^{3/2}\frac{1}{4\pi^{2}}\int^{\infty}_{0}\mathrm{d}\xi\,\xi^{-1/2}\,\Theta\left(E-E_{c}-\xi\right)\\
+ & =\frac{1}{2\pi^{2}}\left(\frac{2m^{*}}{\hbar^{2}}\right)^{3/2}\sqrt{E-E_{c}}\,\Theta\left(E-E_{c}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}\left(z,E\right) & =\frac{m^{*}}{\pi\hbar^{2}}\frac{1}{\Delta k}2\int^{\infty}_{0}\mathrm{d}k\frac{1}{L}\Theta\left(E-E_{c}-\frac{\hbar^{2}k^{2}}{2m^{*}}\right)\\
+ & =\frac{m^{*}}{\pi\hbar^{2}}\frac{L}{2\pi}\frac{1}{L}2\int^{\infty}_{E_{c}}\mathrm{d}\varepsilon\frac{m^{*}}{\hbar^{2}\frac{\sqrt{2m^{*}}}{\hbar}\sqrt{\varepsilon-E_{c}}}\Theta\left(E-\varepsilon\right)\\
+ & =\frac{1}{4\pi^{2}}\left(\frac{2m^{*}}{\hbar^{2}}\right)^{3/2}\int^{\infty}_{E_{c}}\mathrm{d}\varepsilon\frac{1}{\sqrt{\varepsilon-E_{c}}}\Theta\left(E-\varepsilon\right)\\
+\xi=\varepsilon-E_{c}\qquad & =\frac{1}{4\pi^{2}}\left(\frac{2m^{*}}{\hbar^{2}}\right)^{3/2}\int^{E-E_{c}}_{0}\mathrm{d}\xi\,\xi^{-1/2}\\
+ & =\frac{1}{2\pi^{2}}\left(\frac{2m^{*}}{\hbar^{2}}\right)^{3/2}\sqrt{E-E_{c}}\\
+\\\varepsilon & =E_{c}+\frac{\hbar^{2}k^{2}}{2m^{*}}\\
+\mathrm{d}\varepsilon & =\frac{\hbar^{2}k}{m^{*}}\mathrm{d}k\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Schrödinger Equation with Open Boundary Conditions
+\end_layout
+
+\begin_layout Standard
+We assume a confinement potential 
+\begin_inset Formula $U\left(z\right)$
+\end_inset
+
+ on a finite domain 
+\begin_inset Formula $z\in\left(0,L\right)$
+\end_inset
+
+.
+ Outside of this domain,
+ we assume a constant continuation of the potential 
+\begin_inset Formula $U\left(z\leq0\right)=U\left(0\right)$
+\end_inset
+
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $U\left(z\geq L\right)=U\left(L\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Then,
+ the wave function of a 
+\family default
+\series bold
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+particle entering the domain from the left
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ with energy 
+\begin_inset Formula $E\geq U\left(0\right)$
+\end_inset
+
+ is written as
+\begin_inset Formula 
+\begin{align*}
+\psi^{\rightarrow}\left(z\right) & =\mathrm{e}^{ik^{\rightarrow}_{E}z}+R^{\rightarrow}\mathrm{e}^{-ik^{\rightarrow}_{E}z}\qquad\left(z\leq0\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\left|\psi^{\rightarrow}\left(z\right)\right|^{2} & =1+\left|R^{\rightarrow}\right|^{2}+2\mathrm{Re}\left(R^{\rightarrow*}\mathrm{e}^{2ik^{\rightarrow}_{E}z}\right)\\
+\mathrm{e}^{ik^{\rightarrow}_{E}z}\psi^{\rightarrow}\left(z\right)-\mathrm{e}^{2ik^{\rightarrow}_{E}z} & =+R^{\rightarrow}\\
+\\\psi^{\rightarrow}\left(L\right)\mathrm{e}^{-ik^{\rightarrow}_{E}L} & =T^{\rightarrow}\\
+\\\psi^{\rightarrow}\left(z\right) & =\mathrm{e}^{ik^{\rightarrow}_{E}z}+R^{\rightarrow}\mathrm{e}^{-ik^{\rightarrow}_{E}z}\qquad\left(z\leq0\right)\\
+\\\psi^{\rightarrow}\left(0\right) & =1+R^{\rightarrow}\\
+\psi^{\rightarrow}\left(-\Delta z\right) & =\mathrm{e}^{-ik^{\rightarrow}_{E}\Delta z}+R^{\rightarrow}\mathrm{e}^{ik^{\rightarrow}_{E}\Delta z}\\
+\\\mathrm{e}^{-ik^{\rightarrow}_{E}\Delta z}\psi^{\rightarrow}\left(-\Delta z\right) & =\mathrm{e}^{-2ik^{\rightarrow}_{E}\Delta z}+R^{\rightarrow}\\
+\\\mathrm{e}^{-ik^{\rightarrow}_{E}\Delta z}\psi^{\rightarrow}\left(-\Delta z\right)-\mathrm{e}^{-2ik^{\rightarrow}_{E}\Delta z} & =\psi^{\rightarrow}\left(0\right)-1\\
+\psi^{\rightarrow}\left(-\Delta z\right)-\psi^{\rightarrow}\left(0\right) & =\mathrm{e}^{ik^{\rightarrow}_{E}\Delta z}\psi^{\rightarrow}\left(0\right)-\psi^{\rightarrow}\left(0\right)-2i\sin\left(k^{\rightarrow}_{E}\Delta z\right)\\
+ & \approx ik^{\rightarrow}_{E}\Delta z\psi^{\rightarrow}\left(0\right)-2i\sin\left(k^{\rightarrow}_{E}\Delta z\right)\\
+\frac{\psi^{\rightarrow}\left(-\Delta z\right)-\psi^{\rightarrow}\left(0\right)}{\Delta z} & \approx ik^{\rightarrow}_{E}\left(\psi^{\rightarrow}\left(0\right)-2\underbrace{\frac{\sin\left(k^{\rightarrow}_{E}\Delta z\right)}{k^{\rightarrow}_{E}\Delta z}}_{\to1}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+where the first term is the incoming wave and the second term is the wave reflected from the domain of interest.
+ At the boundary 
+\begin_inset Formula $z=0$
+\end_inset
+
+ it holds
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\psi^{\rightarrow}}{\partial z}\vert_{z=0} & =ik^{\rightarrow}_{E}\left(\mathrm{e}^{ik^{\rightarrow}_{E}z}-R^{\rightarrow}\mathrm{e}^{-ik^{\rightarrow}_{E}z}\right)\vert_{z=0}\\
+ & =ik^{\rightarrow}_{E}\left(2\mathrm{e}^{ik^{\rightarrow}_{E}z}-\psi^{\rightarrow}\left(z\right)\right)\vert_{z=0}\\
+ & =2ik^{\rightarrow}_{E}-ik^{\rightarrow}_{E}\psi^{\rightarrow}\left(0\right)
+\end{align*}
+
+\end_inset
+
+This is a Robin type BC.
+ The wave vector is
+\begin_inset Formula 
+\begin{align*}
+k^{\rightarrow}_{E} & =\frac{\sqrt{2m^{*}\left(E-U\left(0\right)\right)}}{\hbar}.
+\end{align*}
+
+\end_inset
+
+ Similarly,
+ the wave function of the electron leaving the domain on the right hand side boundary reads
+\begin_inset Formula 
+\begin{align*}
+\psi^{\rightarrow}\left(z\right) & =T^{\rightarrow}\mathrm{e}^{ik^{\rightarrow}_{E}z}\qquad\left(z\geq L\right)
+\end{align*}
+
+\end_inset
+
+This implies the inhomogeneous Neumann BC
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\psi^{\rightarrow}}{\partial z}\vert_{z=L} & =ik^{\rightarrow}_{E}\psi^{\rightarrow}\left(L\right).
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In full analogy,
+ we treat a 
+\series bold
+particle entering from the right
+\series default
+ hand side with energy 
+\begin_inset Formula $E\geq U\left(L\right)$
+\end_inset
+
+ assuming
+\begin_inset Formula 
+\begin{align*}
+\psi^{\leftarrow}\left(z\right) & =\mathrm{e}^{-ik^{\leftarrow}_{E}z}+R^{\leftarrow}\mathrm{e}^{ik^{\leftarrow}_{E}z}\qquad\left(z\geq L\right)\\
+\psi^{\leftarrow}\left(z\right) & =T^{\leftarrow}\mathrm{e}^{-ik^{\leftarrow}_{E}z}\qquad\left(z\leq0\right)
+\end{align*}
+
+\end_inset
+
+and
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\begin{align*}
+k^{\leftarrow}_{E} & =\frac{\sqrt{2m^{*}\left(E-U\left(L\right)\right)}}{\hbar}.
+\end{align*}
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+leading to BCs
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\psi^{\leftarrow}}{\partial z}\vert_{z=L} & =+ik^{\leftarrow}_{E}\psi^{\leftarrow}\left(L\right)-2ik^{\leftarrow}_{E}\mathrm{e}^{-ik^{\leftarrow}_{E}L}\\
+\frac{\partial\psi^{\leftarrow}}{\partial z}\vert_{z=0} & =-ik^{\leftarrow}_{E}\psi^{\leftarrow}\left(0\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We summarize this as
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\psi}{\partial z}\vert_{z=0} & =\alpha_{0}\psi\left(0\right)+\beta_{0}\\
+\frac{\partial\psi}{\partial z}\vert_{z=L} & =\alpha_{L}\psi\left(L\right)+\beta_{L}
+\end{align*}
+
+\end_inset
+
+with coefficient
+\begin_inset Formula 
+\begin{align*}
+\alpha_{0} & =\begin{cases}
+-ik^{\rightarrow}_{E} & \rightarrow\\
+-ik^{\leftarrow}_{E} & \leftarrow
+\end{cases} & \alpha_{L} & =\begin{cases}
+ik^{\rightarrow}_{E} & \rightarrow\\
+ik^{\leftarrow}_{E} & \leftarrow
+\end{cases}\\
+\beta_{0} & =\begin{cases}
+2ik^{\rightarrow}_{E} & \rightarrow\\
+0 & \leftarrow
+\end{cases} & \beta_{L} & =\begin{cases}
+0 & \rightarrow\\
+-2ik^{\leftarrow}_{E}\mathrm{e}^{-ik^{\leftarrow}_{E}L} & \leftarrow
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For a bound state with energy 
+\begin_inset Formula $\min\left(U\left(z\right)\right)<E<\min\left(U\left(0\right),U\left(L\right)\right)$
+\end_inset
+
+ the choice of BCs is of minor importance.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Normalization
+\begin_inset Formula 
+\begin{align*}
+\psi\left(z\right)= & \begin{cases}
+\mathrm{e}^{ikz}+R\mathrm{e}^{-ikz}\\
+\psi\left(z\right)\\
+T\mathrm{e}^{ikz}
+\end{cases}\\
+\int\mathrm{d}z\,\psi^{*}_{E,\rightarrow}\left(z\right)\psi_{E,\rightarrow}\left(z\right) & =\begin{cases}
+\int\mathrm{d}z\,\left(\mathrm{e}^{-ik^{\rightarrow}_{E}z}+R^{\rightarrow*}\left(E\right)\mathrm{e}^{ik^{\rightarrow}_{E}z}\right)\left(\mathrm{e}^{ik^{\rightarrow}_{E}z}+R^{\rightarrow}\left(E\right)\mathrm{e}^{-ik^{\rightarrow}_{E}z}\right)\\
+\int\mathrm{d}z\,\left|\psi_{E}\left(z\right)\right|^{2}\\
+\int\mathrm{d}z\,T^{\rightarrow*}\left(E\right)\mathrm{e}^{-ik_{E}z}T^{\rightarrow}\left(E\right)\mathrm{e}^{ik_{E}z}
+\end{cases}\\
+ & =\begin{cases}
+\int^{0}_{-\infty}\mathrm{d}z\,+R^{\rightarrow*}\left(E\right)\int^{0}_{-\infty}\mathrm{d}z\,\mathrm{e}^{2ik^{\rightarrow}_{E}z}+R^{\rightarrow}\left(E\right)\int^{0}_{-\infty}\mathrm{d}z\,\mathrm{e}^{-2ik^{\rightarrow}_{E}z}+\left|R^{\rightarrow}\left(E\right)\right|^{2}\int^{0}_{-\infty}\mathrm{d}z\,\\
+\int^{L}_{0}\mathrm{d}z\,\left|\psi_{E}\left(z\right)\right|^{2}\\
+\left|T^{\rightarrow}\left(E\right)\right|^{2}\int^{\infty}_{L}\mathrm{d}z\,
+\end{cases}\\
+ & =\left(1+\left|R^{\rightarrow}\left(E\right)\right|^{2}\right)\int^{0}_{-\infty}\mathrm{d}z\,+R^{\rightarrow*}\left(E\right)\int^{0}_{-\infty}\mathrm{d}z\,\mathrm{e}^{2ik^{\rightarrow}_{E}z}+R^{\rightarrow}\left(E\right)\int^{0}_{-\infty}\mathrm{d}z\,\mathrm{e}^{-2ik^{\rightarrow}_{E}z}+\int^{L}_{0}\mathrm{d}z\,\left|\psi_{E}\left(z\right)\right|^{2}+\left|T^{\rightarrow}\left(E\right)\right|^{2}\int^{\infty}_{L}\mathrm{d}z\,\\
+\end{align*}
+
+\end_inset
+
+Wir bruachen sowas wie 
+\begin_inset Formula 
+\begin{align*}
+\int\mathrm{d}z\,\psi^{*}_{E,\rightarrow}\left(z\right)\psi_{E',\rightarrow}\left(z\right) & =\delta_{E,E'}\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Finite Differences
+\end_layout
+
+\begin_layout Standard
+We assume an equidistant grid 
+\begin_inset Formula $z_{l}=\left(l-1\right)\Delta z$
+\end_inset
+
+,
+ 
+\begin_inset Formula $l=1\ldots N$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Delta z=L/\left(N-1\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi\left(z_{l}\right)=\psi_{l}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $U\left(z_{l}\right)=U_{l}$
+\end_inset
+
+.
+ We discretize the equation for the inner points
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}}\frac{\psi_{l+1}-2\psi_{l}+\psi_{l-1}}{\Delta z^{2}}+U_{l}\psi_{l} & =E\psi_{l}\qquad2\leq l\leq N-1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Without the potential,
+ we find the discrete dispersion relation for plane waves 
+\begin_inset Formula $\psi_{l}\sim\mathrm{e}^{ikz_{l}}=\mathrm{e}^{ik\left(l-1\right)\Delta z}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(\mathrm{e}^{ik\Delta z}-2+\mathrm{e}^{-ik\Delta z}\right) & =E
+\end{align*}
+
+\end_inset
+
+such that
+\begin_inset Formula 
+\begin{align*}
+E & =\frac{2\hbar^{2}}{m^{*}\Delta z^{2}}\sin^{2}\left(\frac{k\Delta z}{2}\right)\approx\frac{\hbar^{2}k^{2}}{2m^{*}}\left(1+\frac{1}{3}\left(\frac{k\Delta z}{2}\right)^{2}+\ldots\right)
+\end{align*}
+
+\end_inset
+
+At the left and right facet we find
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(\psi_{2}-2\psi_{1}+\psi_{0}\right)+U_{1}\psi_{1} & =E\psi_{1}\\
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(\psi_{N+1}-2\psi_{N}+\psi_{N-1}\right)+U_{N}\psi_{N} & =E\psi_{N}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Incoming wave from left
+\end_layout
+
+\begin_layout Standard
+We use
+\begin_inset Formula 
+\begin{align*}
+\psi_{1} & =\mathrm{e}^{ikz_{1}}+R\mathrm{e}^{-ikz_{1}}\\
+\psi_{0} & =\mathrm{e}^{ik\left(z_{1}-\Delta z\right)}+R\mathrm{e}^{-ik\left(z_{1}-\Delta z\right)}
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\psi_{N} & =T\mathrm{e}^{ikz_{N}}\\
+\psi_{N+1} & =T\mathrm{e}^{ik\left(z_{N}+\Delta z\right)}
+\end{align*}
+
+\end_inset
+
+Then
+\begin_inset Formula 
+\begin{align*}
+\psi_{0} & =\mathrm{e}^{ik\Delta z}\psi_{1}-\mathrm{e}^{ikz_{1}}2i\sin\left(k\Delta z\right)\\
+\psi_{N+1} & =\psi_{N}\mathrm{e}^{ik\Delta z}
+\end{align*}
+
+\end_inset
+
+This yields
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{2}+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(2-\mathrm{e}^{ik\Delta z}\right)\psi_{1}+\left(U_{1}-E\right)\psi_{1} & =-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\mathrm{e}^{ikz_{1}}2i\sin\left(k\Delta z\right)\\
+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(2-\mathrm{e}^{ik\Delta z}\right)\psi_{N}-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{N-1}+\left(U_{N}-E\right)\psi_{N} & =0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{2}+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(2+\mathrm{e}^{ik\Delta z}\right)\psi_{1}+\left(U_{1}-E\right)\psi_{1} & =\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\mathrm{e}^{ikz_{1}}2i\sin\left(k\Delta z\right)\\
+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left\{ 2-\mathrm{e}^{ik\Delta z}\right\} \psi_{N}+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{N-1}+\left(U_{N}-E\right)\psi_{N} & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Incoming wave from right
+\end_layout
+
+\begin_layout Standard
+We assume
+\begin_inset Formula 
+\begin{align*}
+\psi_{1} & =T\mathrm{e}^{-ikz_{1}}\\
+\psi_{0} & =T\mathrm{e}^{-ik\left(z_{1}-\Delta z\right)}
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\psi_{N} & =\mathrm{e}^{-ikz_{N}}+R\mathrm{e}^{ikz_{N}}\\
+\psi_{N+1} & =\mathrm{e}^{-ik\left(z_{N}+\Delta z\right)}+R\mathrm{e}^{ik\left(z_{N}+\Delta z\right)}
+\end{align*}
+
+\end_inset
+
+Then
+\begin_inset Formula 
+\begin{align*}
+\psi_{0} & =\psi_{1}\mathrm{e}^{ik\Delta z}\\
+\psi_{N+1} & =\mathrm{e}^{ik\Delta z}\psi_{N}-\mathrm{e}^{-ikz_{N}}2i\sin\left(k\Delta z\right)
+\end{align*}
+
+\end_inset
+
+This yields
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{2}+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{1}\left(2-\mathrm{e}^{ik\Delta z}\right)+\left(U_{1}-E\right)\psi_{1} & =0\\
+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(2-\mathrm{e}^{ik\Delta z}\right)\psi_{N}-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{N-1}+\left(U_{N}-E\right)\psi_{N} & =-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\mathrm{e}^{-ikz_{N}}2i\sin\left(k\Delta z\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{2}+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(2+\mathrm{e}^{ik\Delta z}\right)\psi_{1}+\left(U_{1}-E\right)\psi_{1} & =0\\
+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(2-\mathrm{e}^{ik\Delta z}\right)\psi_{N}+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{N-1}+\left(U_{N}-E\right)\psi_{N} & =-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\mathrm{e}^{-ikz_{N}}2i\sin\left(k\Delta z\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+At the left facet we find
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}}\frac{2}{\Delta z}\left(\frac{\psi_{2}-\psi_{1}}{\Delta z}-\alpha_{0}\psi_{1}-\beta_{0}\right)+U_{1}\psi_{1} & =E\psi_{1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+or better
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(\psi_{2}-2\psi_{1}-\psi_{0}\right)+U_{1}\psi_{1} & =E\psi_{1}
+\end{align*}
+
+\end_inset
+
+We use 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(\psi_{l+1}-2\psi_{l}+\psi_{l-1}\right) & =E\psi_{l}\\
+\psi_{l} & \sim\mathrm{e}^{ikl\Delta z}\\
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left(\mathrm{e}^{ik\Delta z}-2+\mathrm{e}^{-ik\Delta z}\right) & =E
+\end{align*}
+
+\end_inset
+
+such that
+\begin_inset Formula 
+\begin{align*}
+E & =\frac{\hbar^{2}}{m^{*}\Delta z^{2}}\left(1-\cos\left(k\Delta z\right)\right)=\frac{\hbar^{2}}{m^{*}\Delta z^{2}}\left(1-\cos\left(k\Delta z\right)\right)\\
+ & =\frac{2\hbar^{2}}{m^{*}\Delta z^{2}}\sin^{2}\left(\frac{k\Delta z}{2}\right)\\
+ & \approx\frac{\hbar^{2}k^{2}}{2m^{*}}\left(1+\frac{1}{3}\left(\frac{k\Delta z}{2}\right)^{2}+\ldots\right)
+\end{align*}
+
+\end_inset
+
+Then
+\begin_inset Formula 
+\begin{align*}
+k & =\frac{1}{\Delta z}\arccos\left(1-\frac{m^{*}\Delta z^{2}}{\hbar^{2}}E\right)
+\end{align*}
+
+\end_inset
+
+Robin BC
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\begin{align*}
+\psi^{\rightarrow}\left(z\right) & =\mathrm{e}^{ik^{\rightarrow}_{E}z}+R^{\rightarrow}\mathrm{e}^{-ik^{\rightarrow}_{E}z}\qquad\left(z\leq0\right)
+\end{align*}
+
+\end_inset
+
+becomes
+\begin_inset Formula 
+\begin{align*}
+\psi_{1} & =\mathrm{e}^{ik^{\rightarrow}_{E}z_{1}}+R^{\rightarrow}\mathrm{e}^{-ik^{\rightarrow}_{E}z_{1}}\\
+\psi_{0} & =\mathrm{e}^{ik^{\rightarrow}_{E}z_{0}}+R^{\rightarrow}\mathrm{e}^{-ik^{\rightarrow}_{E}z_{0}}=\mathrm{e}^{ik^{\rightarrow}_{E}z_{1}}\mathrm{e}^{-ik^{\rightarrow}_{E}\Delta z}+R^{\rightarrow}\mathrm{e}^{-ik^{\rightarrow}_{E}z_{1}}\mathrm{e}^{ik^{\rightarrow}_{E}\Delta z}\\
+ & =\mathrm{e}^{ik^{\rightarrow}_{E}z_{1}}\mathrm{e}^{-ik^{\rightarrow}_{E}\Delta z}+\left(\psi_{1}-\mathrm{e}^{ik^{\rightarrow}_{E}z_{1}}\right)\mathrm{e}^{ik^{\rightarrow}_{E}\Delta z}\\
+\psi_{0} & =\mathrm{e}^{ik^{\rightarrow}_{E}\Delta z}\psi_{1}-2i\mathrm{e}^{ik^{\rightarrow}_{E}z_{1}}\sin\left(k^{\rightarrow}_{E}\Delta z\right)\\
+\frac{\psi_{1}-\psi_{0}}{\Delta z} & =-ik^{\rightarrow}_{E}\mathrm{e}^{i\frac{k^{\rightarrow}_{E}\Delta z}{2}}\frac{\sin\left(\frac{k^{\rightarrow}_{E}\Delta z}{2}\right)}{\frac{k^{\rightarrow}_{E}\Delta z}{2}}\psi_{1}+2ik^{\rightarrow}_{E}\mathrm{e}^{ik^{\rightarrow}_{E}z_{1}}\frac{\sin\left(k^{\rightarrow}_{E}\Delta z\right)}{k^{\rightarrow}_{E}\Delta z}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\psi^{\rightarrow}}{\partial z}\vert_{z=0} & =ik^{\rightarrow}_{E}\left(\mathrm{e}^{ik^{\rightarrow}_{E}z}-R^{\rightarrow}\mathrm{e}^{-ik^{\rightarrow}_{E}z}\right)\vert_{z=0}\\
+ & =ik^{\rightarrow}_{E}\left(2\mathrm{e}^{ik^{\rightarrow}_{E}z}-\psi^{\rightarrow}\left(z\right)\right)\vert_{z=0}\\
+ & =2ik^{\rightarrow}_{E}-ik^{\rightarrow}_{E}\psi^{\rightarrow}\left(0\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Then
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\psi_{2}+\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}\left[2+\mathrm{e}^{ik^{\rightarrow}_{E}\Delta z}\right]\psi_{1}-\frac{\hbar^{2}}{2m^{*}\Delta z^{2}}2i\mathrm{e}^{ik^{\rightarrow}_{E}z_{1}}\sin\left(k^{\rightarrow}_{E}\Delta z\right)+U_{1}\psi_{1} & =E\psi_{1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+At the right facet we find
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2m^{*}}\frac{2}{\Delta z}\left(\alpha_{L}\psi_{N}+\beta_{L}-\frac{\psi_{N}-\psi_{N-1}}{\Delta z}\right)+U_{N}\psi_{N} & =E\psi_{N}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\frac{\hbar^{2}}{2m^{*}\left(\Delta z\right)^{2}}2\left(1-\Delta z\alpha_{L}\right)\psi_{N}-\frac{\hbar^{2}}{2m^{*}\left(\Delta z\right)^{2}}2\psi_{N-1}+\left(U_{N}-E\right)\psi_{N} & =+\frac{\hbar^{2}}{2m^{*}\left(\Delta z\right)^{2}}2\Delta z\beta_{L}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+We focus on the conduction band and make the ansatz
+\begin_inset Formula 
+\begin{align*}
+\Psi_{n}\left(\mathbf{r}\right) & =u_{c,\mathbf{k}_{0}}\left(\mathbf{r}\right)F_{n}\left(\mathbf{r}\right)
+\end{align*}
+
+\end_inset
+
+and in quantum well 
+\begin_inset Formula 
+\begin{align*}
+F_{c,n}\left(\mathbf{r}\right)\to & F_{c,\mathbf{k}_{\parallel},n}\left(\mathbf{r}\right)=\frac{1}{\sqrt{A}}\mathrm{e}^{ik_{x}x}\mathrm{e}^{ik_{y}y}f_{n}\left(z\right)\\
+E_{n}\to & E_{n,\mathbf{k}_{\parallel}}=\varepsilon_{n}+\frac{\hbar^{2}k^{2}_{\parallel}}{2m\left(z\right)}
+\end{align*}
+
+\end_inset
+
+We omit the conduction band index 
+\begin_inset Quotes eld
+\end_inset
+
+c
+\begin_inset Quotes erd
+\end_inset
+
+ and select 
+\begin_inset Formula $\mathbf{k}_{0}=\mathbf{0}$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\begin{align*}
+\mathrm{LDOS}\left(\mathbf{r},E\right) & =2\frac{1}{A}\sum_{n,\mathbf{k}_{\parallel}}\left|u_{c,\mathbf{k}_{0}}\left(\mathbf{r}\right)\right|^{2}\left|f_{n}\left(z\right)\right|^{2}\delta\left(E_{n}+\frac{\hbar^{2}k^{2}_{\parallel}}{2m\left(z\right)}-E\right)\\
+ & 2\frac{1}{A}\sum_{n,\mathbf{k}_{\parallel}}\left|u_{c,\mathbf{k}_{0}}\left(\mathbf{r}\right)\right|^{2}\left|f_{n}\left(z\right)\right|^{2}\delta\left(E_{n}-E\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Wave Functions
+\end_layout
+
+\begin_layout Plain Layout
+Schrödinger equation for envelope
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2}\nabla\cdot\left(m^{-1}\left(\mathbf{r}\right)\nabla F\left(\mathbf{r}\right)\right)+U\left(\mathbf{r}\right)F\left(\mathbf{r}\right) & =EF\left(\mathbf{r}\right)
+\end{align*}
+
+\end_inset
+
+with scalar (isotropic),
+ position dependent effective mass 
+\begin_inset Formula $m$
+\end_inset
+
+ and confinement potential 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ We assume a quantum well nanostructure,
+ i.e.,
+ continuous translation invariance in the 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ plane such that
+\begin_inset Formula 
+\begin{align*}
+F\left(\mathbf{r}\right) & =\frac{1}{\sqrt{A}}\mathrm{e}^{ik_{x}x}\mathrm{e}^{ik_{y}y}f\left(z\right)\\
+U\left(\mathbf{r}\right) & =U\left(z\right)\\
+m\left(\mathbf{r}\right) & =m\left(z\right)
+\end{align*}
+
+\end_inset
+
+Then
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2}\frac{\partial}{\partial z}\left(\frac{1}{m\left(z\right)}\frac{\partial f\left(z\right)}{\partial z}\right)+\frac{\hbar^{2}}{2m\left(z\right)}\left(k^{2}_{x}+k^{2}_{y}\right)f\left(z\right)+U\left(z\right)f\left(z\right) & =Ef\left(z\right)
+\end{align*}
+
+\end_inset
+
+We assume an equidistant grid 
+\begin_inset Formula $z_{l}=z_{1}+\left(l-1\right)\Delta z$
+\end_inset
+
+,
+ 
+\begin_inset Formula $l=1\ldots N$
+\end_inset
+
+ and discretize by integration over boxes 
+\begin_inset Formula $\Omega_{l}=\left[\frac{z_{l-1}+z_{l}}{2},\frac{z_{l}+z_{l+1}}{2}\right]$
+\end_inset
+
+ centered around nodes 
+\begin_inset Formula $z_{l}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2}\int_{\Omega_{l}}\mathrm{d}z\,\frac{\partial}{\partial z}\left(\frac{1}{m\left(z\right)}\frac{\partial f\left(z\right)}{\partial z}\right)+\int_{\Omega_{l}}\mathrm{d}z\,\frac{\hbar^{2}}{2m\left(z\right)}\left(k^{2}_{x}+k^{2}_{y}\right)f\left(z_{l}\right)+\int_{\Omega_{l}}\mathrm{d}z\,U\left(z\right)f\left(z\right) & =E\int_{\Omega_{l}}\mathrm{d}z\,f\left(z\right).
+\end{align*}
+
+\end_inset
+
+We assume the effective mass and the potential to be constant along edges between nodes,
+ e.g.
+ 
+\begin_inset Formula $U\left(z_{l}\leq z\leq z_{l+1}\right)=U_{l}$
+\end_inset
+
+ and Robin type BCs
+\begin_inset Formula 
+\begin{align*}
+f'\left(z_{1}\right) & =\alpha_{\mathrm{left}}f\left(z_{1}\right)+\beta_{\mathrm{left}}\\
+f'\left(z_{N}\right) & =\alpha_{\mathrm{right}}f\left(z_{N}\right)+\beta_{\mathrm{right}}
+\end{align*}
+
+\end_inset
+
+BCs will be detailed below.
+\end_layout
+
+\begin_layout Plain Layout
+Then 
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2}\left(\frac{1}{m_{l}}\frac{f_{l+1}-f_{l}}{\Delta z}-\frac{1}{m_{l-1}}\frac{f_{l}-f_{l-1}}{\Delta z}\right)+\Delta z\frac{\hbar^{2}}{2}\left(k^{2}_{x}+k^{2}_{y}\right)\frac{1}{2}\left(\frac{1}{m_{l-1}}+\frac{1}{m_{l}}\right)f_{l}+\frac{\Delta z}{2}\left(U_{l-1}+U_{l}\right)f_{l} & =E\Delta zf_{l}\qquad l=2\ldots N-2
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $f_{l}=f\left(z_{l}\right)$
+\end_inset
+
+.
+ At the boundaries we find
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2}\int_{\Omega_{l}}\mathrm{d}z\,\frac{\partial}{\partial z}\left(\frac{1}{m\left(z\right)}\frac{\partial f\left(z\right)}{\partial z}\right)+\int_{\Omega_{l}}\mathrm{d}z\,\frac{\hbar^{2}}{2m\left(z\right)}\left(k^{2}_{x}+k^{2}_{y}\right)f\left(z_{l}\right)+\int_{\Omega_{l}}\mathrm{d}z\,U\left(z\right)f\left(z\right) & =E\int_{\Omega_{l}}\mathrm{d}z\,f\left(z\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We write this as
+\begin_inset Formula 
+\begin{align*}
+-\frac{\hbar^{2}}{2\Delta z^{2}}\frac{1}{m_{l}}f_{l+1}-\frac{\hbar^{2}}{2\Delta z^{2}}\frac{1}{m_{l-1}}f_{l-1}+\frac{\hbar^{2}}{2\Delta z^{2}}\left(\frac{1}{m_{l}}+\frac{1}{m_{l-1}}\right)f_{l}+\frac{\hbar^{2}}{2}\left(k^{2}_{x}+k^{2}_{y}\right)\frac{1}{2}\left(\frac{1}{m_{l-1}}+\frac{1}{m_{l}}\right)f_{l}+\frac{1}{2}\left(U_{l-1}+U_{l}\right)f_{l} & =Ef_{l}\\
+\\l=1\qquad-\frac{\hbar^{2}}{2\Delta z^{2}}\frac{1}{m_{1}}\left(f_{2}-f_{1}\right)+\frac{\hbar^{2}}{2\Delta z}\frac{1}{m_{1}}\frac{\partial f}{\partial z}\left(0\right)+\frac{\hbar^{2}}{2}\left(k^{2}_{x}+k^{2}_{y}\right)\frac{1}{2}\left(\frac{1}{m_{0}}+\frac{1}{m_{1}}\right)f_{l}+\frac{1}{2}\left(U_{0}+U_{1}\right)f_{1} & =Ef_{1}\\
+\rightarrow\qquad-\frac{\hbar^{2}}{2\Delta z^{2}}\frac{1}{m_{1}}\left(f_{2}-f_{1}\right)+\underline{\frac{\hbar^{2}}{2\Delta z}\frac{1}{m_{1}}2ik_{E}}-\frac{\hbar^{2}}{2\Delta z}\frac{1}{m_{1}}ik_{E}f_{1}+\frac{\hbar^{2}}{2}\left(k^{2}_{x}+k^{2}_{y}\right)\frac{1}{2}\left(\frac{1}{m_{0}}+\frac{1}{m_{1}}\right)f_{l}+\frac{1}{2}\left(U_{0}+U_{1}\right)f_{1} & =Ef_{1}\\
+\leftarrow\qquad-\frac{\hbar^{2}}{2\Delta z^{2}}\frac{1}{m_{1}}\left(f_{2}-f_{1}\right)-\frac{\hbar^{2}}{2\Delta z}\frac{1}{m_{1}}ik_{E}f_{1}+\frac{\hbar^{2}}{2}\left(k^{2}_{x}+k^{2}_{y}\right)\frac{1}{2}\left(\frac{1}{m_{0}}+\frac{1}{m_{1}}\right)f_{l}+\frac{1}{2}\left(U_{0}+U_{1}\right)f_{1}\\
+l=2\qquad-\frac{\hbar^{2}}{2\Delta z^{2}}\frac{1}{m_{2}}f_{3}-\frac{\hbar^{2}}{2\Delta z^{2}}\frac{1}{m_{1}}f_{1}+\frac{\hbar^{2}}{2\Delta z^{2}}\left(\frac{1}{m_{2}}+\frac{1}{m_{1}}\right)f_{2}+\frac{\hbar^{2}}{2}\left(k^{2}_{x}+k^{2}_{y}\right)\frac{1}{2}\left(\frac{1}{m_{1}}+\frac{1}{m_{2}}\right)f_{2}+\frac{1}{2}\left(U_{1}+U_{2}\right)f_{2} & =Ef_{2}
+\end{align*}
+
+\end_inset
+
+BC:
+ incoming wave from left
+\begin_inset Formula 
+\begin{align*}
+f^{\rightarrow}\left(z\leq0\right) & =\mathrm{e}^{ik_{E}z}+R\mathrm{e}^{-ik_{E}z}\\
+f^{\rightarrow}\left(z\geq L\right) & =T\mathrm{e}^{ik_{E}z}\\
+k_{E} & =\frac{\sqrt{2m\left(0\right)\left(E-U\left(0\right)\right)}}{\hbar}
+\end{align*}
+
+\end_inset
+
+Then
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial f^{\rightarrow}}{\partial z}\left(0\right) & =ik_{E}\left(\mathrm{e}^{ik_{E}z}-R\mathrm{e}^{-ik_{E}z}\right)\\
+ & =\underbrace{2ik_{E}\mathrm{e}^{ik_{E}z}}_{\text{injection}}\vert_{z=0}\underbrace{-ik_{E}f^{\rightarrow}\left(0\right)}_{\text{outgoing wave}}\\
+ & =2ik_{E}-ik_{E}f^{\rightarrow}\left(0\right)\\
+\frac{\partial f^{\rightarrow}}{\partial z}\left(L\right) & =ik_{E}f^{\rightarrow}\left(L\right)
+\end{align*}
+
+\end_inset
+
+Incoming wave from right
+\begin_inset Formula 
+\begin{align*}
+f^{\leftarrow}\left(z\geq L\right) & =\mathrm{e}^{-ik_{E}z}+R\mathrm{e}^{+ik_{E}z}\\
+k_{E} & =\frac{\sqrt{2m\left(L\right)U\left(L\right)}}{\hbar}\\
+\frac{\partial f^{\leftarrow}}{\partial z}\vert_{L} & =-2ik_{E}\mathrm{e}^{-ik_{E}L}+ik_{E}f^{\leftarrow}\left(L\right)\\
+f^{\leftarrow}\left(z\leq0\right) & =T\mathrm{e}^{-ik_{E}z}\\
+f^{\leftarrow}\left(0\right) & =-ik_{E}f^{\leftarrow}\left(0\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
